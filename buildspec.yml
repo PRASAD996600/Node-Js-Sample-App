@@ -8,7 +8,6 @@ phases:
       - env
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 292025097823.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=292025097823.dkr.ecr.us-east-1.amazonaws.com/nodejs-app-ecr:latest
       - IMAGE_TAG=$(echo release-$CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-10)
   build:
     commands:
